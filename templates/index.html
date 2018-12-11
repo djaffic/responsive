@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- articles -->
+<div class="row align-items-center m-0" style="background-color:beige;">
+    <div class="col-12 col-md-7 main__img px-0">
+        <img class="img-fluid" src="https://via.placeholder.com/650x400" alt="">
+    </div>
+    <div class="d-none d-md-block text-center col-md-5 main__img_title">
+        {% for article in last_article %}
+        <p class="main_title__pubdate">{{ article.pub_date }}</p>
+        <h4 class="main_title__text">{{ article.title }}</h4>
+        {% endfor %}
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div class="card-deck mt-3">
+            <div class="row">
+                {% for article in ordered_articles %}
+                <div class="col-sm-12 mb-sm-3 col-lg-4">
+                    <div class="card h-100">
+                        <div class="card-body position-relative">
+                            <h5 class="card-title text-center">{{ article.title }}</h5>
+                            <p class="card-text text-justify">{{ article.text|truncatewords:30 }}</p>
+                            <a href="{{ article.get_absolute_url }}"
+                               class="btn btn-primary btn-sm position-absolute btn_bottom">Подробнее</a>
+                        </div>
+                        <div class="card-footer">
+                            <small class="text-muted">{{ article.pub_date }}</small>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="col-md-12 w-100 d-flex articles justify-content-md-end">
+                <a href="{% url 'articles_url' %}" class="btn btn-outline-primary btn-rounded waves-effect">Читать все
+                    новости</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- articles end -->
+<!-- site links -->
+<!--<div class="row">-->
+    <!--<div class="col">-->
+        <!--<div class="card-deck my-3">-->
+            <!--<div class="row w-100">-->
+                <!--<div class="col-sm-12 col-lg-4">-->
+                    <!--<div class="card text-center align-items-center">-->
+                        <!--<div class="card-body">-->
+                              <!--<span style="font-size: 48px; color: #3288c8;">-->
+                                <!--<i class="fa fa-bar-chart fa-lg" aria-hidden="true"></i>-->
+                              <!--</span>-->
+                              <!--<h3 class="card-title font-weight-bold">Отделы</h3>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-12 col-lg-4">-->
+                    <!--<div class="card text-center align-items-center">-->
+                        <!--<div class="card-body">-->
+                              <!--<span style="font-size: 48px; color: #3288c8;">-->
+                                <!--<i class="fa fa-balance-scale fa-lg" aria-hidden="true"></i>-->
+                              <!--</span>-->
+                              <!--<h3 class="card-title font-weight-bold">Эталоны</h3>-->
+                        <!--</div>-->
+
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-sm-12 col-lg-4">-->
+                    <!--<div class="card text-center align-items-center">-->
+                        <!--<div class="card-body">-->
+                              <!--<span style="font-size: 48px; color: #3288c8;">-->
+                                <!--<i class="fa fa-file-text-o fa-lg" aria-hidden="true"></i>-->
+                              <!--</span>-->
+                              <!--<h3 class="card-title font-weight-bold">Документы</h3>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+<!--</div>-->
+<!-- site links end -->
+
+<!-- partner slider -->
+
+
+<div class="row owl-carousel mx-auto">
+    {% for partner in partners %}
+    <div class="col partners">
+        <img src="{{ partner.icon.url }}" alt="" class="partner__image">
+        <p class="partner__name text-center">{{ partner.short_name }}</p>
+    </div>
+    {% endfor %}
+</div>
+<!-- partner slider end -->
+{% endblock content%}
