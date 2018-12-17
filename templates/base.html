@@ -39,7 +39,12 @@
         <div class="col-8 text-center text-sm-left text-uppercase font-weight-bold header__fullname">
           Федеральное государственное унитарное предприятие "Всероссийский научно-исследовательский институт расходометрии"
         </div>
-        <input class="col-2 ml-auto form-control-sm active-cyan-2 text-right header__search" type="text" placeholder="Search" aria-label="Search">
+        <form class="form-inline my-2 my-lg-0 col-12 w-100 col-lg-2 ml-auto">
+          <input class="d-block w-100 ml-auto form-control-sm active-cyan-2 text-right header__search mr-0"
+                 type="search" placeholder="Search" aria-label="Search">
+          <!--<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
+        </form>
+        <!--<input class="col-2 ml-auto form-control-sm active-cyan-2 text-right header__search" type="text" placeholder="Search" aria-label="Search">-->
     </div>
   <!-- header end -->
   <!-- nav -->
@@ -56,7 +61,7 @@
                     <li class="nav-item dropdown mx-3">
                       <a class="nav-link dropdown-toggle font-weight-normal" href="#" id="navbarDropdown" role="button"
                          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Об учреждении
+                        О предприятии
                       </a>
                       <div class="dropdown-menu navbar__bg" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item text-white font-weight-normal"
@@ -67,6 +72,8 @@
                           Руководство</a>
                         <a class="dropdown-item text-white font-weight-normal"
                            href="{% url 'get_page_url' slug='management-kachestva' %}">Менеджмент качества</a>
+                        <a class="dropdown-item text-white font-weight-normal"
+                           href="{% url 'get_page_url' slug='hr' %}">Вакансии</a>
                       </div>
                     </li>
                     <li class="nav-item dropdown mx-3">
@@ -99,7 +106,7 @@
                         <a class="dropdown-item text-white font-weight-normal"
                            href="{% url 'get_page_url' slug='company-detail' %}">Реквизиты предприятия</a>
                         <a class="dropdown-item text-white font-weight-normal"
-                           href="{% url 'get_page_url' slug='zakupki' %}">Закупочная документация</a>
+                           href="{% url 'get_page_url' slug='zakupki' %}">Закупки</a>
                       </div>
                     </li>
                     <li class="nav-item dropdown mx-3">
@@ -184,32 +191,32 @@
 
     <!-- partner slider -->
 
-    <div class="row owl-carousel mx-auto">
-      <div class="col partners">
-          <img src="https://via.placeholder.com/150x150" alt="" class="partner__image">
-          <p class="partner__name text-center">Partner1</p>
-      </div>
-      <div class="col partners">
-          <img src="https://via.placeholder.com/150x150" alt="" class="partner__image">
-          <p class="partner__name text-center">Partner2</p>
-      </div>
-      <div class="col partners">
-          <img src="https://via.placeholder.com/150x150" alt="" class="partner__image">
-          <p class="partner__name text-center">Partner3</p>
-      </div>
-      <div class="col partners">
-          <img src="https://via.placeholder.com/150x150" alt="" class="partner__image">
-          <p class="partner__name text-center">Partner4</p>
-      </div>
-      <div class="col partners">
-          <img src="https://via.placeholder.com/150x150" alt="" class="partner__image">
-          <p class="partner__name text-center">Partner5</p>
-      </div>
-      <div class="col partners">
-          <img src="https://via.placeholder.com/150x150" alt="" class="partner__image">
-          <p class="partner__name text-center">Partner6</p>
-      </div>
-    </div>
+    <!--<div class="row owl-carousel mx-auto">-->
+      <!--<div class="col partners">-->
+          <!--<img src="https://via.placeholder.com/150x150" alt="" class="partner__image">-->
+          <!--<p class="partner__name text-center">Partner1</p>-->
+      <!--</div>-->
+      <!--<div class="col partners">-->
+          <!--<img src="https://via.placeholder.com/150x150" alt="" class="partner__image">-->
+          <!--<p class="partner__name text-center">Partner2</p>-->
+      <!--</div>-->
+      <!--<div class="col partners">-->
+          <!--<img src="https://via.placeholder.com/150x150" alt="" class="partner__image">-->
+          <!--<p class="partner__name text-center">Partner3</p>-->
+      <!--</div>-->
+      <!--<div class="col partners">-->
+          <!--<img src="https://via.placeholder.com/150x150" alt="" class="partner__image">-->
+          <!--<p class="partner__name text-center">Partner4</p>-->
+      <!--</div>-->
+      <!--<div class="col partners">-->
+          <!--<img src="https://via.placeholder.com/150x150" alt="" class="partner__image">-->
+          <!--<p class="partner__name text-center">Partner5</p>-->
+      <!--</div>-->
+      <!--<div class="col partners">-->
+          <!--<img src="https://via.placeholder.com/150x150" alt="" class="partner__image">-->
+          <!--<p class="partner__name text-center">Partner6</p>-->
+      <!--</div>-->
+    <!--</div>-->
     {% endblock content%}
     <!-- partner slider end -->
 
@@ -257,7 +264,7 @@
   <script>
     var owl = $('.owl-carousel');
     owl.owlCarousel({
-        items:5,
+        items:7,
         loop:true,
         autoplay:true,
         autoplayTimeout:5000,
@@ -275,7 +282,7 @@
             center:true
           },
           1000:{
-            items:5,
+            items:6,
             nav:false
           }
         }

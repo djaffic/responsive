@@ -30,7 +30,9 @@
             <div class="col-12 col-sm-6 col-md-3 mb-5">
               <div class="card h-100">
                 <div class="card-body">
-                  <h7 class="card-title"><a class="card__link" href="{{ department.get_absolute_url }}">{{ department.title|upper }}</a></h7>
+                  <h7 class="card-title"><a class="card__link"
+                      href="{{ department.get_absolute_url }}">{{ department.title|upper }}</a></h7>
+                  <p class="">({{ department.short_title }})</p>
                 </div>
               </div>
             </div>

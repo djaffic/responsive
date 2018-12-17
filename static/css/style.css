@@ -17,6 +17,12 @@
 .header__search{
     margin-right: 15px;
 }
+
+.header__img{
+    height: 450px;
+    width: 600px;
+}
+
 .navbar__bg{
     background-color: #21325b;
     /*font-size:12px;*/
@@ -46,9 +52,9 @@
 }
 
 .partner__image{
-    height: 150px;
-    width: 150px;
-    border-radius: 75px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
     margin-bottom: 10px;
 }
 .partner__image:hover{
@@ -98,7 +104,7 @@
     }
     .partners{
         margin-top: 10px;
-        width: 150px;
+        width: 100px;
         height: 100%;
     }
  }
@@ -110,7 +116,7 @@
     }
     .partners{
         margin-top: 10px;
-        width: 150px;
+        width: 100px;
         height: 100%;
     }
 }

@@ -24,7 +24,7 @@ def departments_list(request):
 
 
 def managements_list(request):
-    managements = Management.objects.all()
+    managements = Management.objects.all().order_by("id")
     context = {
         "managements": managements
     }

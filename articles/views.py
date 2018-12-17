@@ -23,8 +23,8 @@ def article_detail(request, pk):
 
 
 def last_articles(request):
-    ordered_articles = Article.objects.all().order_by('-pub_date')[:3]
-    last_article = Article.objects.all().order_by('-pub_date')[:1]
+    ordered_articles = Article.objects.order_by('-pub_date')[:3]
+    last_article = Article.objects.last()
     partners = Partner.objects.all()
     context = {
         'ordered_articles': ordered_articles,

@@ -16,13 +16,17 @@ class Tag(models.Model):
     def __str__(self):
         return self.title
 
+def article_image_folder(instance, filename):
+    filename = str(instance.id) + "." + filename.split(".")[1]
+    return "articles/{0}/{1}".format(instance.id, filename)
 
 class Article(models.Model):
     #создаем модель новости
-    title = models.CharField(verbose_name="Название статьи", max_length=200)
-    text = models.TextField(verbose_name="Текст статьи")
-    pub_date = models.DateField(verbose_name="Дата добавления", auto_now_add=False)
+    title = models.CharField("Название статьи", max_length=200)
+    text = models.TextField("Текст статьи")
+    pub_date = models.DateField("Дата добавления", auto_now_add=False)
     tags = models.ManyToManyField(Tag, verbose_name="Теги")
+    image = models.ImageField("Картинка статьи", upload_to=article_image_folder, blank=True)
 
     def get_absolute_url(self):
         return reverse('article_detail_url', kwargs={'pk': self.id})
